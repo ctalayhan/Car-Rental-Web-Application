@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarRental.DAL\CarRental.DAL.csproj" />
+    <ProjectReference Include="..\CarRental.DTO\CarRental.DTO.csproj" />
+    <ProjectReference Include="..\CarRental.Entity\CarRental.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

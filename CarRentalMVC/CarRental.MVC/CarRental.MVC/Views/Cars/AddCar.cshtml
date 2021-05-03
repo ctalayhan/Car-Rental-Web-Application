@@ -1,0 +1,79 @@
+﻿
+@model AddCarVM
+<h1>Add Car</h1>
+
+@*<form method="post" asp-action="AddCar" asp-controller="Cars" enctype="multipart/form-data">
+    <div class="row mb-3">
+        <label for="inputImage" class="col-sm-2 col-form-label">Picture</label>
+        <div class="col-sm-5">
+            <input type="file" asp-for="@Model.Image" class="form-control-file" id="carImage">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPlateNo" class="col-sm-2 col-form-label">Plate No</label>
+        <div class="col-sm-5">
+            <input type="text" asp-for="@Model.PlateNo" class="form-control" id="plateNo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputChassisNo" class="col-sm-2 col-form-label">Chassis No</label>
+        <div class="col-sm-5">
+            <input asp-for="@Model.ChassisNo" type="text" class="form-control" id="chassisNo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputGearType" class="col-sm-2 col-form-label">Gear Type</label>
+        <div>
+            <select asp-for="@Model.GearID" class="form-select" id="gearTypeSelect">
+                @foreach (var geartype in Model.GearTypeList)
+                {
+                    <option value="@geartype.GearID">@geartype.GearType</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputModelName" class="col-sm-2 col-form-label">Model  Name</label>
+        <div>
+            <input type="hidden" value="@Model.BrandRefID" id="brandRedID" />
+            <select asp-for="@Model.BrandModelDetailID" class="form-select" id="Model Name">
+                @foreach (var modelType in Model.ModelList)
+                {
+                    <option value="@modelType.ModelID">@modelType.ModelName</option>
+                }
+
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="fuelType" class="col-sm-2 col-form-label">Fuel Type</label>
+        <div>
+            <select asp-for="@Model.FuelTypeID" class="form-select" id="fuelTypeSelect">
+                @foreach (var fuelType in Model.FuelTypeList)
+                {
+                    <option value="@fuelType.FuelTypeID">@fuelType.FuelTypeName</option>
+                }
+
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="statusType" class="col-sm-2 col-form-label">Current Status</label>
+        <div>
+            <select asp-for="@Model.StatusTypeID" class="form-select" id="statusTypeSelect">
+                @foreach (var statusType in Model.StatusList)
+                {
+                    <option value="@statusType.StateID">@statusType.StatusDescription</option>
+                }
+
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputDailyFee" class="col-sm-2 col-form-label">Daily Fee</label>
+        <div class="col-sm-5">
+            <input asp-for="@Model.DailyFee" type="text" class="form-control" id="dailyFee">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Car</button>
+</form>*@

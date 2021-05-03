@@ -1,0 +1,33 @@
+﻿
+@model List<EmployeeBasicInfoVM>
+
+
+<section id="employees">
+    <div class="container">
+        <div class="text-center">
+            <a asp-action="AddEmployee" asp-controller="Departments" type="button" class="btn d-block btn-large btn-primary my-3 mr-3">Add New Employee</a>
+        </div>
+        <table class="table">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Director</th>
+            </tr>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.EmployeeID</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Phone</td>
+                    <td>@employee.DirectorName</td>
+                    <td><a asp-route-id="@employee.EmployeeID" asp-action="EmployeeDetails" asp-controller="Departments" type="button" class="btn btn-block btn-primary">Details</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>
+
+

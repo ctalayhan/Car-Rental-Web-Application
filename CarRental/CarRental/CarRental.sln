@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.Core", "CarRental.Core\CarRental.Core.csproj", "{66A15A37-F954-4112-8E63-9977958BA070}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.Entity", "CarRental.Entity\CarRental.Entity.csproj", "{CFC6E80C-D53B-42C4-B97A-6EAFC8C3F757}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.DAL", "CarRental.DAL\CarRental.DAL.csproj", "{77E1B78A-4FE5-4006-BFB0-485DD40FD792}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.API", "CarRental.API\CarRental.API.csproj", "{A7C3CFFD-3F12-4812-8CB3-C5F68136B273}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.BLL", "CarRental.BLL\CarRental.BLL.csproj", "{D1DF3887-DE65-470C-8F69-AF91E2B1B5AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.DTO", "CarRental.DTO\CarRental.DTO.csproj", "{471D2173-A9BF-4691-B3DF-214F1BF1636D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66A15A37-F954-4112-8E63-9977958BA070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A15A37-F954-4112-8E63-9977958BA070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A15A37-F954-4112-8E63-9977958BA070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A15A37-F954-4112-8E63-9977958BA070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC6E80C-D53B-42C4-B97A-6EAFC8C3F757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC6E80C-D53B-42C4-B97A-6EAFC8C3F757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC6E80C-D53B-42C4-B97A-6EAFC8C3F757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC6E80C-D53B-42C4-B97A-6EAFC8C3F757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E1B78A-4FE5-4006-BFB0-485DD40FD792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E1B78A-4FE5-4006-BFB0-485DD40FD792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E1B78A-4FE5-4006-BFB0-485DD40FD792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E1B78A-4FE5-4006-BFB0-485DD40FD792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C3CFFD-3F12-4812-8CB3-C5F68136B273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C3CFFD-3F12-4812-8CB3-C5F68136B273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C3CFFD-3F12-4812-8CB3-C5F68136B273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C3CFFD-3F12-4812-8CB3-C5F68136B273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1DF3887-DE65-470C-8F69-AF91E2B1B5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DF3887-DE65-470C-8F69-AF91E2B1B5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DF3887-DE65-470C-8F69-AF91E2B1B5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DF3887-DE65-470C-8F69-AF91E2B1B5AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{471D2173-A9BF-4691-B3DF-214F1BF1636D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{471D2173-A9BF-4691-B3DF-214F1BF1636D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{471D2173-A9BF-4691-B3DF-214F1BF1636D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{471D2173-A9BF-4691-B3DF-214F1BF1636D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56B3370A-82DE-4F41-AE67-207147FEF52A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/carrentalba
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CarRental.Core\\CarRental.Core.csproj
+		SccProjectName1 = CarRental.Core
+		SccLocalPath1 = CarRental.Core
+		SccProjectUniqueName2 = CarRental.Entity\\CarRental.Entity.csproj
+		SccProjectName2 = CarRental.Entity
+		SccLocalPath2 = CarRental.Entity
+		SccProjectUniqueName3 = CarRental.DAL\\CarRental.DAL.csproj
+		SccProjectName3 = CarRental.DAL
+		SccLocalPath3 = CarRental.DAL
+		SccProjectUniqueName4 = CarRental.API\\CarRental.API.csproj
+		SccProjectName4 = CarRental.API
+		SccLocalPath4 = CarRental.API
+		SccProjectUniqueName5 = CarRental.BLL\\CarRental.BLL.csproj
+		SccProjectName5 = CarRental.BLL
+		SccLocalPath5 = CarRental.BLL
+		SccProjectUniqueName6 = CarRental.DTO\\CarRental.DTO.csproj
+		SccProjectName6 = CarRental.DTO
+		SccLocalPath6 = CarRental.DTO
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\bin\Debug\netcoreapp3.1\CarRental.Core.deps.json
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\bin\Debug\netcoreapp3.1\CarRental.Core.runtimeconfig.json
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\bin\Debug\netcoreapp3.1\CarRental.Core.runtimeconfig.dev.json
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\bin\Debug\netcoreapp3.1\CarRental.Core.dll
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\bin\Debug\netcoreapp3.1\CarRental.Core.pdb
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.csprojAssemblyReference.cache
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.AssemblyInfoInputs.cache
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.AssemblyInfo.cs
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.csproj.CoreCompileInputs.cache
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.dll
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.pdb
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.Core\obj\Debug\netcoreapp3.1\CarRental.Core.genruntimeconfig.cache

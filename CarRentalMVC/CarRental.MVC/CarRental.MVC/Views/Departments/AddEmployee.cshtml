@@ -1,0 +1,94 @@
+﻿@model EmployeeAddVM
+
+<section id="employee-add">
+    <div class="container">
+        <h1 class="pl-0 mb-4">Employee Add Form</h1>
+        <form asp-action="AddEmployee" asp-controller="Departments" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" id="employee-add-picture" name="employee-add-picture" class="form-control-file" />
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeAddName">Employee Name</label>
+                    <input asp-for="FirstName" type="text" class="form-control" id="employeAddName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="employeAddBirthdate">Birthdate</label>
+                    <input asp-for="BirthDate" type="date" class="form-control" id="employeAddBirthdate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeAddSurname">Employee Surname</label>
+                    <input asp-for="LastName" type="text" class="form-control" id="employeeAddSurname">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="employeeAddGender">State</label>
+                    <select asp-for="@Model.Gender" id="employeeAddGender" class="form-control">
+                        <option selected>M</option>
+                        <option>F</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeAddDepartment">Department</label>
+                    <input type="text" class="form-control" id="employeeAddDepartment" readonly placeholder="Under Construction">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="EmployeeAddBloodtype">Blood Type</label>
+                    <input asp-for="BloodType" type="text" class="form-control" id="EmployeeAddBloodtype">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeAddTitle">Title</label>
+                    <input type="text" class="form-control" id="employeeAddTitle" readonly placeholder="Under Construction">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="EmployeeAddEducation">Education</label>
+                    <input asp-for="Education" type="text" class="form-control" id="EmployeeAddEducation">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="EmployeeAddDirector">Director</label>
+                    <select asp-for="@Model.ReportsToID" id="EmployeeAddDirector" class="form-control">
+                        <option value="@null" selected>No Director</option>
+                        @foreach (var director in Model.Directors)
+                        {
+                            <option value="@director.DirectorId" selected>@director.DirectorName</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="employeeAddSalary">Salary</label>
+                    <input type="text" class="form-control" id="EmployeeAddSalary" readonly placeholder="Under Construction">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="EmployeeAddPhone">Phone</label>
+                    <input asp-for="Phone" type="tel" class="form-control" id="EmployeeAddPhone">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="EmployeeAddEmail">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" id="EmployeeAddEmail">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="employeeAddAddress">Address</label>
+                <input asp-for="Address" type="text" class="form-control" id="employeeAddAddress">
+            </div>
+            <div class="form-group">
+                <label for="employeeAddSummary">Summary</label>
+                <textarea asp-for="Summary" class="form-control" id="employeeAddSummary" rows="5"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-block">Add Employee</button>
+            </div>
+        </form>
+    </div>
+</section>
+

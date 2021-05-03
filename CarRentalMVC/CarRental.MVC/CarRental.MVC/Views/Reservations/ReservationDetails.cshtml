@@ -1,0 +1,104 @@
+﻿@model List<ReservationDetailsVM>
+
+@{
+    ViewData["Title"] = "ReservationDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/css/Cars/CarIndex.css" rel="stylesheet" />
+
+<div class="container text-left">
+    <h1>ReservationDetails</h1>
+</div>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <table class="table table-borderless border-0 text-left">
+                        <tbody>
+
+                            <tr>
+                                <th>Car Name</th>
+                                <td>@item.CarName</td>
+                            </tr>
+                            <tr>
+                                <th>DailyFee</th>
+                                <td>@item.DailyFee</td>
+                            </tr>
+                            <tr>
+                                <th>DayCount</th>
+                                <td>@item.DayCount</td>
+                            </tr>
+                            <tr>
+                                <th>DeliveryDate</th>
+                                <td>@item.DeliveryDate.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                            <tr>
+                                <th>ReturnDate</th>
+                                <td>@item.ReturnDate</td>
+                            </tr>
+                            <tr>
+                                <th>Discount Ratio</th>
+                                <td>@item.DiscountRatio</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table table-borderless border-0 text-left">
+                        <tbody>
+
+                            <tr>
+                                <th>DeliveryLocation</th>
+                                <td>@item.DeliveryLocation</td>
+                            </tr>
+                            <tr>
+                                <th>ReturnLocation</th>
+                                <td>@item.ReturnLocation</td>
+                            </tr>
+                            <tr>
+                                <th>Insurance Description</th>
+                                <td>@item.InsuranceDescription</td>
+                            </tr>
+                            <tr>
+                                <th>Driver Name</th>
+                                <td>@item.DriverName</td>
+                            </tr>
+                            <tr>
+                                <th>Contract Type</th>
+                                <td>@item.ContractType</td>
+                            </tr>
+                            <tr>
+                                <th>Delivery Employee Name</th>
+                                <td>@item.DeliveryEmployeeName</td>
+                            </tr>
+                            <tr>
+                                <th>Return Employeel Name</th>
+                                <td>@item.ReturnEmployeelName</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container text-center">
+                    <a asp-route-id="@(item.ReservationID + "-" + item.CarID)" asp-action="ReservationDetailsUpdate" asp-controller="Reservations" class="btn btn-large btn-primary" type="button" >Update</a>
+                    @*<a asp-route-id="@item.CarID" asp-action="#" asp-controller="Reservations" type="button" class="btn btn-large btn-primary">Delete</a>*@
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

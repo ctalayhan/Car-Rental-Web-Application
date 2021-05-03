@@ -1,0 +1,180 @@
+﻿@model CarDetailsVM
+
+@{
+    //var gear = Model.GearTypeList.FirstOrDefault(x => x.GearID == Model.GearID);
+    //var fuel = Model.FuelTypeList.FirstOrDefault(x => x.FuelTypeID == Model.FuelTypeID);
+    //var model = Model.ModelList.FirstOrDefault(x => x.BrandRefID == Model.BrandModelDetailID);
+}
+@*<link href="~/css/Cars/CarsUpdatePage.css" rel="stylesheet" />*@
+
+@{
+    int counter = 1;
+    string imageBase64Data = null;
+    string imageDataURL = null;
+
+    if (Model.Image != null)
+    {
+        imageBase64Data = Convert.ToBase64String(Model.Image);
+        imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+
+    }
+}
+
+<div class="container p-0">
+    <h1 class="pl-1">Car Details</h1>
+
+    @if (Model.Image == null)
+    {
+        <img src="~/img/Empty Car Picture.jpeg" alt="default dsadpicture" style="max-width:150px" class="mb-4" />
+    }
+    else
+    {
+        <img src="@imageDataURL" alt="default picture" style="max-width:400px" />
+    }
+
+    <table class="table table-borderless border-0 text-left mb-0 pl-0">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>@Model.CarID</td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td>@Model.BrandName</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>@Model.ModelName</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>@Model.ModelYear.ToString("yyyy")</td>
+            </tr>
+            <tr>
+                <th>Daily Fee</th>
+                <td>@Model.DailyFee</td>
+            </tr>
+            <tr>
+                <th>Plate No</th>
+                <td>@Model.PlateNo</td>
+            </tr>
+            <tr>
+                <th>Chassis No</th>
+                <td>@Model.ChassisNo</td>
+            </tr>
+            <tr>
+                <th>Gear</th>
+                <td>@Model.GearType</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>@Model.StatusName</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br />
+    <h1 class="pl-1">Car History</h1>
+    <div style="max-width:50%">
+        <table class="table table-borderless border-0 text-left mb-0">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Inspection Date</th>
+                    <th scope="col">Visa Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var carHistory in Model.CarHistories)
+                {
+                    <tr>
+                        <th scope="col">@counter</th>
+                        <td>@carHistory.InspectionDate.ToString("dd/MM/yyyy")</td>
+                        <td>@carHistory.VisaDate.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                    counter = counter + 1;
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+    @*<form asp-controller="Cars" asp-action="CarDetails" method="post" role="form" enctype="multipart/form-data">
+        @if (Model.Image==null)
+            {
+                <img src="~/img/Empty Car Picture.jpeg" style="max-width:100px" class="mb-4" />
+            }
+            else
+            {
+                <img src="@imageDataURL" style="max-width:100px" />
+            }
+
+
+
+        <div class="form-group">
+                    <label asp-for="@Model.CarID" class="control-label">Car ID:</label>
+                    <input type="text" asp-for="@Model.CarID" class="form-control">
+                    <span asp-validation-for="@Model.CarID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.PlateNo" class="control-label">Plate No:</label>
+                    <input type="text" asp-for="@Model.PlateNo" class="form-control">
+                    <span asp-validation-for="@Model.PlateNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.ChassisNo" class="control-label">Chassis No:</label>
+                    <input type="text" asp-for="@Model.ChassisNo" class="form-control">
+                    <span asp-validation-for="@Model.ChassisNo" class="text-danger"></span>
+                </div>
+                <div class="row mb-3">
+                    <label for="gear" class="col-sm-2 col-form-label">Gear  Type</label>
+                    <div>
+                        <select asp-for="@Model.GearID" class="form-select" id="gear">
+                            @foreach (var geartype in Model.GearTypeList)
+                            {
+                                <option value="@geartype.GearID">@geartype.GearType</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="model" class="col-sm-2 col-form-label">Model Name</label>
+                    <div>
+                        <select asp-for="@Model.BrandModelDetailID" class="form-select" id="model">
+                            @foreach (var modelType in Model.ModelList)
+                            {
+
+                                <option value="@modelType.ModelID" selected>@modelType.ModelName</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="fuel" class="col-sm-2 col-form-label">Fuel Type</label>
+                    <div>
+                        <select asp-for="@Model.FuelTypeID" class="form-select" id="fuel">
+                            @foreach (var fuelType in Model.FuelTypeList)
+                            {
+                                <option value="@fuelType.FuelTypeID" selected>@fuelType.FuelTypeName</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.DailyFee" class="control-label">Daily Fee:</label>
+                    <input type="text" asp-for="@Model.DailyFee" class="form-control">
+                    <span asp-validation-for="@Model.DailyFee" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <input type="submit" class="btn btn-warning"></input>
+                </div>
+
+            </form>*@
+</div>

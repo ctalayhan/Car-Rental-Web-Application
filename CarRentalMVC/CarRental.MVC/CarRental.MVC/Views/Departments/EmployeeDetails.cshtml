@@ -1,0 +1,103 @@
+﻿@model EmployeeDetailedVM
+
+@{
+    string imageBase64Data = null;
+    string imageDataURL = null;
+
+    if (Model.Image != null)
+    {
+        imageBase64Data = Convert.ToBase64String(Model.Image);
+        imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+    }
+
+}
+
+<section id="employee-info" style="min-height:80vh">
+    <div class="container">
+        <h1 class="pl-0 mb-4">Employee Info</h1>
+
+        @if (Model.Image == null)
+        {
+            <img src="~/img/blank-profile-picture-973460_640.png" alt="default dsadpicture" style="max-width:100px" class="mb-4" />
+        }
+        else
+        {
+            <img src="@imageDataURL" alt="default picture" style="max-width:100px" />
+        }
+        <div class="row mb-4">
+            <div class="col-12 col-md-6 pl-0">
+                <table class="table table-borderless border-0 text-left mb-0">
+                    <tbody>
+                        <tr>
+                            <th width="30%">Id</th>
+                            <td>@Model.EmployeeID</td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>@Model.FirstName</td>
+                        </tr>
+                        <tr>
+                            <th>Surname</th>
+                            <td>@Model.LastName</td>
+                        </tr>
+                        <tr>
+                            <th>Department</th>
+                            <td>Under Construction</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>Under Construction</td>
+                        </tr>
+                        <tr>
+                            <th>Director</th>
+                            <td>@(Model.DirectorName == null ? "Business Partner" : Model.DirectorName)
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>@Model.Phone</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-6 pl-0">
+                <table class="table table-borderless border-0 text-left mb-0">
+                    <tbody>
+                        <tr>
+                            <th>Birthdate</th>
+                            <td>@Model.BirthDate.ToString("dd/MM/yyyy")</td>
+                        </tr>
+                        <tr>
+                            <th>Education</th>
+                            <td>@Model.Education</td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td>@Model.Gender</td>
+                        </tr>
+                        <tr>
+                            <th>Blood Type</th>
+                            <td>@Model.BloodType</td>
+                        </tr>
+                        <tr>
+                            <th>Salary</th>
+                            <td>Under Construction</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>@Model.Address</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h5 class="font-weight-bold text-left mt-3">Curriculum Vitae</h5>
+        <p class="text-left">@Model.Summary</p>
+        <div class="text-center">
+            <a asp-route-id="@Model.EmployeeID" asp-action="UpdateEmployee" asp-controller="Departments" type="button" class="btn btn-large btn-block btn-primary my-2">Update Info</a>
+        </div>
+    </div>
+</section>

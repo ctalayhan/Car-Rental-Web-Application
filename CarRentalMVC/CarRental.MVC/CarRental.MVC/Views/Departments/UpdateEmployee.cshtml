@@ -1,0 +1,132 @@
+﻿@model EmployeeUpdateVM
+@{
+    var director = Model.Directors.FirstOrDefault(x => x.DirectorId == Model.ReportsToID);
+    string directorName = director == null ? null : director.DirectorName;
+    int? directorId = director == null ? null : director.DirectorId;
+    string imageBase64Data = null;
+    string imageDataURL = null;
+
+    if (Model.Image != null)
+    {
+        imageBase64Data = Convert.ToBase64String(Model.Image);
+        imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+    }
+
+}
+
+
+<section id="employee-update">
+    <div class="container">
+        <h1 class="pl-0 mb-4">Employee Update Form</h1>
+        @if (Model.Image == null)
+        {
+            <img src="~/img/blank-profile-picture-973460_640.png" alt="default dsadpicture" style="max-width: 100px" />
+        }
+        else
+        {
+            <img src="@imageDataURL" alt="default picture" style="max-width:100px" />
+        }
+        <form asp-action="UpdateEmployee" asp-controller="Departments" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input value="@imageDataURL" type="file" id="picture" name="picture" class="form-control-file" />
+            </div>
+
+            @*<div></div>*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeName">Employee Name</label>
+                    <input asp-for="FirstName" type="text" class="form-control" id="employeeName" value="@Model.FirstName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="birthdate">Birthdate</label>
+                    <input asp-for="BirthDate" type="date" class="form-control" id="birthdate" value="@Model.BirthDate.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeSurname">Employee Surname</label>
+                    <input asp-for="LastName" type="text" class="form-control" id="employeeSurname" value="@Model.LastName">
+                </div>
+                <div class="form-group col-md-6">
+
+                    <label for="inputState">State</label>
+                    <select asp-for="@Model.Gender" id="inputState" class="form-control">
+                        <option selected>@Model.Gender</option>
+                        <option>@(Model.Gender =='M'?'F' :'M')</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeDepartment">Department</label>
+                    <input type="text" class="form-control" id="employeeDepartment" readonly placeholder="Under Construction">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="bloodtype">Blood Type</label>
+                    <input asp-for="BloodType" type="text" class="form-control" id="bloodtype" placeholder="@Model.BloodType">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="employeeTitle">Title</label>
+                    <input type="text" class="form-control" id="employeeTitle" readonly placeholder="Under Construction">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="education">Education</label>
+                    <input asp-for="Education" type="text" class="form-control" id="education" placeholder="@Model.Education">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="director">Director</label>
+                    <select asp-for="@Model.ReportsToID" id="director" class="form-control">
+                        @if (Model.ReportsToID == null)
+                        {
+                            <option value="@null" selected>No Director</option>
+                        }
+                        else
+                        {
+                            <option value="@directorId" selected>@directorName</option>
+                            <option value="@null">Unassign Director</option>
+                        }
+                        @foreach (var item in Model.Directors)
+                        {
+                            if (item.DirectorId != Model.ReportsToID && item.DirectorId != Model.EmployeeID)
+                            {
+                                <option value="@item.DirectorId">@(item.DirectorName)</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="salary">Salary</label>
+                    <input type="text" class="form-control" id="salary" readonly placeholder="Under Construction">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input asp-for="Phone" type="tel" class="form-control" id="phone" value="@Model.Phone">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" id="email" value="@Model.Email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input asp-for="Address" type="text" class="form-control" id="inputAddress" value="@Model.Address">
+            </div>
+            <div class="form-group">
+                <label for="inputSummary">Summary</label>
+                <textarea asp-for="Summary" class="form-control" id="inputSummary" rows="5">@Model.Summary</textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-block">Update</button>
+            </div>
+        </form>
+    </div>
+</section>
+

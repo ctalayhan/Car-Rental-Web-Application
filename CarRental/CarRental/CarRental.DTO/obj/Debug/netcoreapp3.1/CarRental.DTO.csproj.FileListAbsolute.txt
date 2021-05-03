@@ -1,0 +1,14 @@
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.DTO.deps.json
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.DTO.dll
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.DTO.pdb
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.Core.dll
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.Entity.dll
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.Entity.pdb
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\bin\Debug\netcoreapp3.1\CarRental.Core.pdb
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.csprojAssemblyReference.cache
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.AssemblyInfoInputs.cache
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.AssemblyInfo.cs
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.csproj.CoreCompileInputs.cache
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.csproj.CopyComplete
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.dll
+C:\Users\canan\Source\Workspaces\CarRental\CarRental\CarRental.DTO\obj\Debug\netcoreapp3.1\CarRental.DTO.pdb

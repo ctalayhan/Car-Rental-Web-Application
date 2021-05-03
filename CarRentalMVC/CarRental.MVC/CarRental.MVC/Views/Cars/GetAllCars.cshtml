@@ -1,0 +1,42 @@
+﻿@model List<CarBasicsVM>
+
+@*<link href="~/css/Cars/CarIndex.css" rel="stylesheet" />*@
+
+<div class="container">
+    <div class="text-center">
+        <a asp-action="Cars" asp-controller="AddCar" type="button" class="btn d-block btn-large btn-primary my-3 mr-3" id="add" >Add Car</a>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th scope="col">Car ID</th>
+            <th scope="col">Brand Name</th>
+            <th scope="col">Model Name</th>
+            <th scope="col">Model Year</th>
+            <th scope="col">Status</th>
+            <th scope="col">Details</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.CarID</td>
+                <td>@car.BrandName</td>
+                <td>@car.ModelName.TrimEnd()</td>
+                <td>@car.ModelYear.ToString("yyyy")</td>
+                <td>@car.StatusName</td>
+                <td><a asp-route-id="@car.CarID" asp-controller="Cars" asp-action="CarDetails" class="btn btn-primary">Details </a></td>
+                <td><a asp-route-id="@car.CarID" asp-controller="Cars" asp-action="UpdateCar" class="btn btn-warning">Update </a></td>
+                <td><a asp-route-id="@car.CarID" asp-action="DeleteCar" asp-controller="Cars" type="button" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </table>
+
+    @*<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        document.querySelector("#add").onclick = function () {
+            window.location.href = "http://localhost:56058/Cars/AddCar"
+        }
+    </script>*@
+</div>
